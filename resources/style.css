@@ -1,0 +1,110 @@
+body {
+    background-color: #000000;
+    gap: 10px;
+    font-family: tahoma;
+    color: #282828;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #calc {
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+      "screen screen screen screen"
+      "C ANS DEL plus"
+      "one two three min"
+      "four five six mult"
+      "seven eight nine div"
+      "pi zero point equals";
+  }
+
+  #screen {
+      grid-area: screen;
+  }
+
+  #screen > textarea {
+      height: 40px;
+      width: 270px;
+  }
+
+  button {
+      height: 40px;
+      width: 60px;
+  }
+
+  #out > div > textarea {
+      height: 290px;
+      width: 270px;
+  }
+
+  #C {
+      grid-area: C;
+  }
+
+  #ANS {
+    grid-area: ANS;
+  }
+  #DEL {
+    grid-area: DEL;
+  }
+  #plus {
+    grid-area: plus;
+  }
+  #one {
+    grid-area: one;
+  }
+  #two {
+      grid-area: two;
+  }
+  #three {
+    grid-area: three;
+  }
+  #min {
+      grid-area: min;
+  }
+  #four {
+    grid-area: four;
+  }
+  #five {
+      grid-area: five;
+  }
+  #six {
+    grid-area: six;
+  }
+  #mult {
+      grid-area: mult;
+  }
+  #seven {
+    grid-area: seven;
+  }
+  #eight {
+      grid-area: eight;
+  }
+  #nine {
+    grid-area: nine;
+  }
+  #div {
+      grid-area: div;
+  }
+  #pi {
+    grid-area: pi;
+  }
+  #zero {
+      grid-area: zero;
+  }
+  #point {
+    grid-area: point;
+  }
+  #equals {
+      grid-area: equals;
+  }
+
+  @media only screen and (max-width: 570px) {
+    body {
+        flex-direction: column;
+    }
+}
+  
