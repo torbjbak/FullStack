@@ -1,0 +1,103 @@
+body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header"
+    "main";
+    color: black;
+    margin: 0px;
+    background-color: aquamarine;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    grid-area: header;
+    height: 80px;
+    padding: 10px;
+    background-color: aquamarine;
+}
+
+header > .headImg > img {
+    max-height: 80px;
+}
+
+header > .headHead > h1 {
+    font-family: fantasy;
+    font-weight: lighter;
+    font-size: x-large;
+    padding-left: 20px;
+    color: black;
+}
+
+main {
+    display: grid;
+    grid-area: main;
+    grid-gap: 20px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "sidebar content1 content2 content3"
+    "sidebar lower lower lower";
+    font-family: 'Lucida Sans';
+    background-color: aliceblue;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    max-width: 200px;
+    height: 100%;
+    padding: 10px;
+    background-color: aquamarine;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.s1 {
+    grid-area: content1;
+    padding-right: 10px;
+}
+
+.s2 {
+    grid-area: content2;
+    padding-right: 10px;
+}
+
+.s3 {
+    grid-area: content3;
+    padding-right: 10px;
+}
+
+.s4 {
+    grid-area: lower;
+}
+
+.s4 > figure > img {
+    max-width: 50%;
+}
+
+footer {
+    display: flex;
+    background-color: cadetblue;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+}
+
+footer > p {
+    position: relative;
+    left: 45%;
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        grid-template-areas: 
+        "sidebar content1"
+        "sidebar content2"
+        "sidebar content3"
+        "sidebar lower";
+    }
+}
