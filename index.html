@@ -11,72 +11,74 @@
   <body>
     <section id="calc">
         <div id="screen">
-            <p>-output-</p>
+            <p v-bind:src="result">{{ result }}</p>
         </div>
-        <div class=button id="C">
+        <div class=button id="C" @click="clickClear()">
             <button>C</button>
         </div>
-        <div class=button id="ANS">
+        <div class=button id="ANS" @click="addAns()">
             <button>ANS</button>
         </div>
-        <div class=button id="DEL">
+        <div class=button id="DEL" @click="clickDel())">
             <button>DEL</button>
         </div>
-        <div class=button id="plus">
+        <div class=button id="plus" @click="addOperator('+')">
             <button>+</button>
         </div>
-        <div class=button id="one">
+        <div class=button id="one" @click="addNumber('1')">
             <button>1</button>
         </div>
-        <div class=button id="two">
+        <div class=button id="two" @click="addNumber('2')">
             <button>2</button>
         </div>
-        <div class=button id="three">
+        <div class=button id="three" @click="addNumber('3')">
             <button>3</button>
         </div>
-        <div class=button id="min">
+        <div class=button id="min" @click="addOperator('-')">
             <button>-</button>
         </div>
-        <div class=button id="four">
+        <div class=button id="four" @click="addNumber('4')">
             <button>4</button>
         </div>
-        <div class=button id="five">
+        <div class=button id="five" @click="addNumber('5')">
             <button>5</button>
         </div>
-        <div class=button id="six">
+        <div class=button id="six" @click="addNumber('6')">
             <button>6</button>
         </div>
-        <div class=button id="mult">
+        <div class=button id="mult" @click="addOperator('*')">
             <button>*</button>
         </div>
-        <div class=button id="seven">
+        <div class=button id="seven" @click="addNumber('7')">
             <button>7</button>
         </div>
-        <div class=button id="eight">
+        <div class=button id="eight" @click="addNumber('8')">
             <button>8</button>
         </div>
-        <div class=button id="nine">
+        <div class=button id="nine" @click="addNumber('9')">
             <button>9</button>
         </div>
-        <div class=button id="div">
+        <div class=button id="div" @click="addOperator('/')">
             <button>/</button>
         </div>
-        <div class=button id="pi">
+        <div class=button id="pi" @click="addPi()">
             <button>π</button>
         </div>
-        <div class=button id="zero">
+        <div class=button id="zero" @click="addNumber('0')">
             <button>0</button>
         </div>
-        <div class=button id="point">
+        <div class=button id="point" @click="addPoint()">
             <button>.</button>
         </div>
-        <div class=button id="equals">
+        <div class=button id="equals" @click="clickEquals()">
             <button>=</button>
-        </div>
+        </div> 
     </section>
     <section id="out">
         <div>
-            <p>LOG</p>
+            <ul>
+                <li v-for="calculation in calculations">{{ calculation }}</li>
+            </ul>
         </div>
     </section>
 
