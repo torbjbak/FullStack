@@ -1,10 +1,13 @@
-body {
+  body {
     background-color: #000000;
-    gap: 0.5rem;
     font-family: tahoma;
     color: #282828;
+  }
+
+  main {
     display: flex;
     flex-direction: row;
+    gap: 0.5rem;
   }
 
   #calc {
@@ -12,7 +15,8 @@ body {
     width: fit-content;
     display: grid;
     grid-template-areas:
-      "screen screen screen screen"
+      "upper upper upper upper"
+      "lower lower lower lower"
       "C ANS DEL plus"
       "one two three min"
       "four five six mult"
@@ -20,20 +24,26 @@ body {
       "pi zero point equals";
   }
 
-  #screen {
-      grid-area: screen;
-  }
-
   p {
       margin: 0px;
       font-family:'Courier New', Courier, monospace;
-      font-size: medium;
+      font-size: smaller;
+      padding: 2px;
   }
 
-  #screen > p {
-      height: 40px;
+  .screen > p {
+      height: 20px;
       width: 240px;
       background-color: aquamarine;
+      text-align: right;
+  }
+
+  #upper {
+      grid-area: upper;
+  }
+
+  #lower {
+      grid-area: lower;
   }
 
   button {
@@ -46,7 +56,7 @@ body {
   #out > div > ul {
       margin: 0px;
       height: 240px;
-      width: 240px;
+      width: 200px;
       background-color: aliceblue;
   }
 
@@ -113,7 +123,7 @@ body {
   }
 
   @media only screen and (max-width: 570px) {
-    body {
+    main {
         flex-direction: column;
     }
 }

@@ -9,79 +9,43 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <section id="calc">
-        <div id="screen">
-            <p v-bind:src="result">{{ result }}</p>
-        </div>
-        <div class=button id="C" @click="clickClear()">
-            <button>C</button>
-        </div>
-        <div class=button id="ANS" @click="addAns()">
-            <button>ANS</button>
-        </div>
-        <div class=button id="DEL" @click="clickDel())">
-            <button>DEL</button>
-        </div>
-        <div class=button id="plus" @click="addOperator('+')">
-            <button>+</button>
-        </div>
-        <div class=button id="one" @click="addNumber('1')">
-            <button>1</button>
-        </div>
-        <div class=button id="two" @click="addNumber('2')">
-            <button>2</button>
-        </div>
-        <div class=button id="three" @click="addNumber('3')">
-            <button>3</button>
-        </div>
-        <div class=button id="min" @click="addOperator('-')">
-            <button>-</button>
-        </div>
-        <div class=button id="four" @click="addNumber('4')">
-            <button>4</button>
-        </div>
-        <div class=button id="five" @click="addNumber('5')">
-            <button>5</button>
-        </div>
-        <div class=button id="six" @click="addNumber('6')">
-            <button>6</button>
-        </div>
-        <div class=button id="mult" @click="addOperator('*')">
-            <button>*</button>
-        </div>
-        <div class=button id="seven" @click="addNumber('7')">
-            <button>7</button>
-        </div>
-        <div class=button id="eight" @click="addNumber('8')">
-            <button>8</button>
-        </div>
-        <div class=button id="nine" @click="addNumber('9')">
-            <button>9</button>
-        </div>
-        <div class=button id="div" @click="addOperator('/')">
-            <button>/</button>
-        </div>
-        <div class=button id="pi" @click="addPi()">
-            <button>π</button>
-        </div>
-        <div class=button id="zero" @click="addNumber('0')">
-            <button>0</button>
-        </div>
-        <div class=button id="point" @click="addPoint()">
-            <button>.</button>
-        </div>
-        <div class=button id="equals" @click="clickEquals()">
-            <button>=</button>
-        </div> 
-    </section>
-    <section id="out">
-        <div>
-            <ul>
-                <li v-for="calculation in calculations">{{ calculation }}</li>
-            </ul>
-        </div>
-    </section>
-
+      <main id="app">
+        <section id="calc">
+            <div class="screen" id="upper">
+                <p>{{ writing }}</p>
+            </div>
+            <div class="screen" id="lower">
+                <p>= {{ result }}</p>
+            </div>
+            <button id="C" @click="clear">C</button>
+            <button id="ANS" @click="ans">ANS</button>
+            <button id="DEL" @click="del">DEL</button>
+            <button id="plus" @click="operator('+')">+</button>
+            <button id="one" @click="digit('1')">1</button>
+            <button id="two" @click="digit('2')">2</button>
+            <button id="three" @click="digit('3')">3</button>
+            <button id="min" @click="operator('-')">-</button> 
+            <button id="four" @click="digit('4')">4</button>    
+            <button id="five" @click="digit('5')">5</button>
+            <button id="six" @click="digit('6')">6</button>
+            <button id="mult" @click="operator('*')">*</button>
+            <button id="seven" @click="digit('7')">7</button>
+            <button id="eight" @click="digit('8')">8</button>
+            <button id="nine" @click="digit('9')">9</button>
+            <button id="div" @click="operator('/')">/</button>
+            <button id="pi" @click="pi">π</button>
+            <button id="zero" @click="digit('0')">0</button>
+            <button id="point" @click="point">.</button>
+            <button id="equals" @click="equals">=</button>
+        </section>
+        <section id="out">
+            <div>
+                <ul>
+                    <li v-for="result in results">{{ result }}</li>
+                </ul>
+            </div>
+        </section>
+      </main>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
